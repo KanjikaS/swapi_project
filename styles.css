@@ -1,0 +1,84 @@
+/* Reset some default styling */
+body, h1, h2, p, button, pre {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #282c34;
+    color: #61dafb;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Main content styling */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.api-button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.api-button:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+
+.api-button:active {
+    background-color: #ff9900;
+}
+
+/* Result section styling */
+.result {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+    white-space: pre-wrap; /* Allows wrapping of long lines */
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
