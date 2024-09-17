@@ -8,7 +8,7 @@ let users = [];
 
 const seedUsers = () => {
     users = [];
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 11; i <= 20; i++) {
         users.push({
             id: i,
             name: `User${i}`,
@@ -53,39 +53,26 @@ app.post('/users', (req, res) => {
     res.status(201).json(newUser);
 });
 
-app.put('/users/:id', (req, res) => {
-    const userId = parseInt(req.params.id);
-    const { name, email } = req.body;
-    const user = users.find(u => u.id === userId);
-
-    if (!user) {
-        return res.status(404).json({ message: "User not found" });
-    }
-
-    if (name) user.name = name;
-    if (email) user.email = email;
-
-    res.json(user);
-});
 app.patch('/users/:id', (req, res) => {
     const userId = parseInt(req.params.id);
     const { name, email } = req.body;
     const user = users.find(u => u.id === userId);
+    // const updatedUser = {...user
 
+    // }
     if (!user) {
         return res.status(404).json({ message: "User not found" });
     }
-    
-    if (email && users.some(u => u.email === email && u.id !== userId)) {
-        return res.status(400).json({ message: "Email already exists" });
+    if (email && email !== user.email) {
+        return res.status(400).json({ message: "Email cannot be updated" });
     }
-
-    
-    if (name) user.name = name;
-    if (email) user.email = email;
+    if (name) {
+        user.name = name;
+    }
 
     res.json(user);
 });
+
 
 
 app.delete('/users/:id', (req, res) => {
